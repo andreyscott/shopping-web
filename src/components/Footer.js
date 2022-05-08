@@ -1,8 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import {RiUserAddFill} from 'react-icons/ri'
+import { BellIcon, ShoppingCartIcon,  LogoutIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Link } from 'react-router-dom'
+
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -30,7 +32,7 @@ export default function Example() {
     <>
   
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-white">
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,6 +50,7 @@ export default function Example() {
                   <div className="flex items-center">
                   <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
+                   
                         {navigation.map((item) => (
                           <a
                             key={item.name}
@@ -69,13 +72,19 @@ export default function Example() {
 
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                      >
-                        <span className="sr-only">View notifications</span>
-                        <BellIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
+                    <div className='w-auto mr-1  flex items-center justify-between'>
+                    <Link to="/login" className="flex btn trans">
+                  <LogoutIcon  className="h-6 px-1 w-6" aria-hidden="true" />Login 
+                </Link>
+                <Link to="/register" className="flex btn trans">
+                <RiUserAddFill  className="h-6 p-1 w-6" aria-hidden="true" />Register 
+                </Link>
+                    <Link to="/cart" className="flex btn trans ">
+                  <ShoppingCartIcon  className="h-6 p-1 w-6" aria-hidden="true" />Cart 
+                  {/* {state.length === 0 ? 0 : state.length}) */}
+                </Link>    
+                </div>
+
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
@@ -147,7 +156,25 @@ export default function Example() {
                   ))}
                 </div>
                 <div className="pt-4 pb-3 border-t border-gray-700">
+                  <div className="flex items-center pb-3">  
+                    <div className="flex-shrink-0 flex m-1 p-1 justify-between w-full ">
+                    <Link to="/login" className="flex btn trans">
+                  <LogoutIcon  className="h-6 px-1 w-6" aria-hidden="true" />Login 
+                </Link>
+                <Link to="/register" className="flex btn trans">
+                <RiUserAddFill  className="h-6 p-1 w-6" aria-hidden="true" />Register 
+                </Link>
+                    <Link to="/cart" className="flex btn trans ">
+                  <ShoppingCartIcon  className="h-6 p-1 w-6" aria-hidden="true" />Cart 
+                  {/* {state.length === 0 ? 0 : state.length}) */}
+                </Link>   
+                </div>
+                  </div>
+                    
+
+
                   <div className="flex items-center px-5">
+                 
                     <div className="flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
                     </div>
@@ -169,12 +196,6 @@ export default function Example() {
             </>
           )}
         </Disclosure>
-
-        <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          </div>
-        </header>
        
       </div>
     </>
