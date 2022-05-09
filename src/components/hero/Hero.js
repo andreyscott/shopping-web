@@ -3,7 +3,7 @@ import heroImg from '../../data'
 import SliderContent from "./SliderContent";
 import Dots from './Dots'
 import './slider.css'
-import ButtonFill from '../ButtonFill'
+//import ButtonFill from '../ButtonFill'
 
 
 const len = heroImg.length - 1;
