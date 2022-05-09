@@ -1,5 +1,5 @@
 import React from 'react';
-import {RiUserAddFill} from 'react-icons/ri'
+//import {RiUserAddFill} from 'react-icons/ri'
 import Hero from '../components/hero/Hero';
 
 
