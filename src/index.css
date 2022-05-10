@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+    .card {
+        word-wrap: break-word;
+        background-clip: border-box;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        position: relative;
+    }
     .btn{
         background-color: transparent;
         color: rgb(33, 37, 41);
@@ -25,7 +36,52 @@
     @apply transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 hover:bg-gray-500 duration-300
  
 }
-   
+
+.transbtn{
+    @apply text-4xl transition ease-in-out delay-150  hover:text-white  hover:scale-105 hover:bg-[#2c526a] duration-300
+ 
+}
+
+.col-12{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+.btn {
+    background-color: transparent;
+    
+    border-radius: .25rem;
+    color:  rgba(44,82,106,.934);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+}
+.container{
+    max-width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-1{
+    flex-grow: 0;
+    flex-shrink: 0;
+}
   }
 
   /* @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 */

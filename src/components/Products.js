@@ -52,33 +52,35 @@ function Products() {
   const ShowProducts = () => {
     return (
       <>
-        <div className="flex p-2 first-letter:">
+        <div className="flex justify-center  items-center ">
           <button
-            className="btn btn-outline-dark me-2 selected"
+            className="btn transbtn text-lg   font-medium md:text-4xl me-2 selected"
             onClick={() => setFilter(data)}
           >
             All
           </button>
           <button
-            className="btn btn-outline-dark me-2 selected"
+            className="btn  transbtn text-xs font-medium md:text-3xl"
             onClick={() => filterProduct("men's clothing")}
           >
             Mens' Clothing
           </button>
           <button
-            className="btn btn-outline-dark me-2 selected"
+             className="btn  transbtn text-xs  font-medium md:text-3xl"
+
             onClick={() => filterProduct("women's clothing")}
           >
             Womens' Clothing
           </button>
           <button
-            className="btn btn-outline-dark me-2 selected"
+            className="btn  transbtn text-xs font-medium md:text-4xl"
+
             onClick={() => filterProduct("jewelery")}
           >
             Jewelery
           </button>
           <button
-            className="btn btn-outline-dark me-2 selected"
+                     className="btn  transbtn text-xs  font-medium md:text-4xl"
             onClick={() => filterProduct("electronics")}
           >
             Electronic
@@ -92,17 +94,17 @@ function Products() {
                   <img
                     src={product.image}
                     alt={product.title}
-                    height="250px"
-                    className="card-img-top"
+                    className="card-img-top pb-3 h-96"
                   />
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">
-                      {product.title.substring(0, 12)}...
+                  <div className="card-body ">
+                    <h5 className="card-title font-medium text-lg leading-loose flex flex-col">
+                      {product.title.substring(0, 12)}
+                      <p className="mb-1 text-xl font-extrabold">...</p>
                     </h5>
-                    <p className="card-text lead fw-bold">${product.price}</p>
+                    <p className="font-medium text-lg leading-loose">${product.price}</p>
                     <NavLink
                       to={`/products/${product.id}`}
-                      className="btn btn-outline-dark"
+                      className="btn transbtn"
                     >
                       Buy Now
                     </NavLink>
@@ -117,16 +119,16 @@ function Products() {
   };
 
   return (
-    <div className="container my-5 py-5">
+    <div className="container my-5 py-5 ">
       <div className="row">
         <div className="col-12 mb-5">
-          <h1 className="display-6 fw-bolder text-center dark-text">
+          <h1 className="text-3xl md:text-4xl border-b-2 pb-3  border-green-400  font-bold text-center text-green-500">
             Latest Products
           </h1>
           <hr />
         </div>
       </div>
-      <div className="row d-flex justify-content-center">
+      <div className="flex flex-col md:grid grid-cols-3 gap-3 place-items-center justify-center items-center bg-slate-400  justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
       </div>
     </div>
