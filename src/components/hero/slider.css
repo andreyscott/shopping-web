@@ -87,6 +87,8 @@ nav {
   position: absolute;
   text-align: center;
   top: 50%;
+  left: 3%;
+  padding: 0.6rem;
   z-index: 1;
 }
 .slide-title {

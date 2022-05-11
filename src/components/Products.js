@@ -60,37 +60,38 @@ function Products() {
             All
           </button>
           <button
-            className="btn  transbtn text-xs font-medium md:text-3xl"
+            className="btn  transbtn text-xs font-medium md:text-2xl"
             onClick={() => filterProduct("men's clothing")}
           >
             Mens' Clothing
           </button>
           <button
-             className="btn  transbtn text-xs  font-medium md:text-3xl"
+             className="btn  transbtn text-xs  font-medium md:text-2xl"
 
             onClick={() => filterProduct("women's clothing")}
           >
             Womens' Clothing
           </button>
           <button
-            className="btn  transbtn text-xs font-medium md:text-4xl"
+            className="btn  transbtn text-xs font-medium md:text-2xl"
 
             onClick={() => filterProduct("jewelery")}
           >
             Jewelery
           </button>
           <button
-                     className="btn  transbtn text-xs  font-medium md:text-4xl"
+                     className="btn  transbtn text-xs  font-medium md:text-2xl"
             onClick={() => filterProduct("electronics")}
           >
             Electronic
           </button>
         </div>
+        <div className="flex flex-col mt-4 md:grid grid-cols-3 xl:grid-cols-4 gap-3 place-items-center justify-center">
         {filter.map((product) => {
           return (
             <>
               <div key={product.id} className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
+                <div className="card h-100 shadow-lg rounded-lg text-center p-4" key={product.id}>
                   <img
                     src={product.image}
                     alt={product.title}
@@ -114,6 +115,7 @@ function Products() {
             </>
           );
         })}
+        </div>
       </>
     );
   };
@@ -128,7 +130,7 @@ function Products() {
           <hr />
         </div>
       </div>
-      <div className="flex flex-col md:grid grid-cols-3 gap-3 place-items-center justify-center items-center bg-slate-400  justify-content-center">
+      <div className="flex flex-col  justify-center items-center  justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
       </div>
     </div>
