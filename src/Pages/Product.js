@@ -4,7 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
-function Product() {
+function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,10 +26,13 @@ function Product() {
   const Loading = () => {
     return (
       <>
-        <div className="col-md-6">
-          <Skeleton height={400} />
+     
+      <div className=" max-w-xs ">
+
+          <Skeleton width={200} height={400} />
         </div>
         <div className="col-md-6" style={{ lineHeight: 2 }}>
+        
           <Skeleton height={50} width={300} />
           <Skeleton height={75} />
           <Skeleton height={25} width={150} />
@@ -81,10 +84,12 @@ function Product() {
       <div className="container py-5 ">
         <div className="row py-5">
           {loading ? <Loading /> : <ShowProduct />}
+          
+           {/* <Loading /> */}
         </div>
       </div>
     </div>
   );
 }
 
-export default Product;
+export default ProductPage;

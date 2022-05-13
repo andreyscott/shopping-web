@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { NavLink } from "react-router-dom";
+import 'react-loading-skeleton/dist/skeleton.css'
+//import SkeletonCard from "./skeleton";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -25,22 +27,58 @@ function Products() {
     getProducts();
   }, []);
 
-  const Loading = () => {
+  const anima = () => {
     return (
       <>
-        <div className="col-md-3">
-          <Skeleton height={350} />
+       <div className=" border border-gray-400 shadow rounded-md p-4 max-w-sm w-56 h-72  mx-auto">
+  <div className="animate-pulse flex space-x-4">
+    <div className="rounded-full bg-slate-200 h-10 w-10"></div>
+    <div className="flex-1 space-y-6 py-1">
+      <div className="h-2 bg-slate-200 rounded"></div>
+      <div className="space-y-3">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+          <div className="h-2 bg-slate-200 rounded col-span-1"></div>
         </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height={350} />
-        </div>
+        <div className="h-2 bg-slate-200 rounded"></div>
+      </div>
+    </div>
+  </div>
+</div>
       </>
+    );
+  };
+
+  const Loading = () => {
+    return (
+      <div className="flex flex-col mt-2 md:grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 place-items-center ">
+      
+        <div className="">
+          <Skeleton width={220} height={350} />
+        </div>
+        <div className="">
+          <Skeleton width={230} height={350} />
+        </div>
+        <div className="">
+          <Skeleton width={250} height={350} />
+        </div>
+        <div className="">
+          <Skeleton width={250} height={350} />
+        </div>
+        
+       
+  {/* loopthrough anima 4 times in a row  */}
+  {/* <div className="flex flex-col  mt-4 md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 place-items-center ">
+  {[...Array(4)].map((e, i) => (
+    <div className="flex mt-4 md:grid grid-cols-3 xl:grid-cols-4 gap-3 place-items-center ">
+      {anima()}
+    </div>
+  ))}
+</div> */}
+{/* <SkeletonCard /> */}
+
+
+      </div>
     );
   };
 
@@ -86,16 +124,16 @@ function Products() {
             Electronic
           </button>
         </div>
-        <div className="flex flex-col mt-4 md:grid grid-cols-3 xl:grid-cols-4 gap-3 place-items-center justify-center">
+        <div className="flex flex-col mt-4 md:grid grid-cols-3  lg:grid-cols-4 gap-3 place-items-center justify-center">
         {filter.map((product) => {
           return (
             <>
               <div key={product.id} className="col-md-3 mb-4">
-                <div className="card h-100 shadow-lg rounded-lg text-center p-4" key={product.id}>
+                <div className="card h-100 max-h-full min-h-full shadow-lg rounded-lg text-center p-4 mx-auto" key={product.id}>
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="card-img-top pb-3 h-96"
+                    className="card-img-top w-72 h-72 mx-auto md:w-80 md:h-80"
                   />
                   <div className="card-body ">
                     <h5 className="card-title font-medium text-lg leading-loose flex flex-col">
@@ -132,6 +170,7 @@ function Products() {
       </div>
       <div className="flex flex-col  justify-center items-center  justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
+        {/* <Loading /> */}
       </div>
     </div>
   );
