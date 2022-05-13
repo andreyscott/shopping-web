@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { NavLink } from "react-router-dom";
 import 'react-loading-skeleton/dist/skeleton.css'
-import SkeletonCard from "./skeleton";
+//import SkeletonCard from "./skeleton";
 
 function Products() {
   const [data, setData] = useState([]);
