@@ -8,10 +8,11 @@ import {
 import { Home } from './Pages/Home';
 import { About } from './Pages/About';
 import { Contact } from './Pages/Contact';
-import { Login } from './Pages/Login';
+import  Login  from './Pages/Login';
 // import Product  from './Pages/Product';
 import ProductPage from './Pages/Product';
 import Products from './components/Products';
+import Cart from './Pages/Cart';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
     <Route path='/product' element={<Products /> } />
     <Route path="/products/:id" element={<ProductPage />} />
     <Route path='/contact' element={<Contact  />} />
+    <Route path='/cart' element={<Cart  />} />
 
     <Route path='/login' element={<Login /> } />
   
