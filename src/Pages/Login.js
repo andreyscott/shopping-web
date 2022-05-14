@@ -1,132 +1,157 @@
+import { LockClosedIcon } from '@heroicons/react/solid'
 import React, { useState } from "react";
 import { auth, provider } from "../firebase";
 import { useDispatch } from "react-redux";
 import { signIn } from "../redux/action";
 import { useNavigate } from "react-router-dom";
+import {BsGoogle} from 'react-icons/bs'
+export default function Example2() {
+//States
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [modal, setModal] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [modal, setModal] = useState(false);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  const handleAuth = () => {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
-
-  const login = (e) => {
-    e.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        navigate("/");
-        setUser(auth.user);
-        setModal(false);
-      })
-      .catch((error) => alert(error.message));
-  };
-
-  const setUser = (user) => {
-    dispatch(signIn(user));
-  };
-
+//    Firebase Sign In Auth function
+    const handleAuth = () => {
+        auth
+          .signInWithPopup(provider)
+          .then((result) => {
+            setUser(result.user);
+          })
+          .catch((error) => {
+            alert(error.message);
+          });
+      };
+    
+      const login = (e) => {
+        e.preventDefault();
+        auth
+          .signInWithEmailAndPassword(email, password)
+          .then((auth) => {
+            navigate("/");
+            setUser(auth.user);
+            setModal(false);
+          })
+          .catch((error) => alert(error.message));
+      };
+    
+      const setUser = (user) => {
+        dispatch(signIn(user));
+      };
+    
   return (
     <>
-      <button
-        type="button"
-        className="btn  btn-outline-dark"
-        onClick={(e) => setModal(true)}
-      >
-        <i className="fa fa-sign-in me-1 "></i> Login
-      </button>
-      {modal === true && (
-        <>
-          <div className=" flex bg-green-300 formWrapper" onClick={() => setModal(false)} />
+      {/*
+        This example requires updating your template:
 
-          <div className="modal-content position-absolute">
-            <div className="flex justify-content-end align-items-center mb-1 mt-4 me-4">
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                onClick={() => setModal(false)}
-              ></button>
-            </div>
-            <div className="modal-body ps-5 pe-5 pt-0 pb-3">
-              <h5
-                className="modal-title login-header text-start mb-5"
-                id="exampleModalLabel"
-              >
-                Login
-              </h5>
-              <button
-                className="btn btn-dark w-100 mb-4"
+        ```
+        <html class="h-full bg-gray-50">
+        <body class="h-full">
+        ```
+      */}
+      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div>
+            <img
+              className="mx-auto h-12 w-auto"
+              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+              alt="Workflow"
+            />
+               <button
+                className="btn rounded-md flex w-96 justify-center items-center mx-auto"
                 data-bs-dismiss="modal"
                 onClick={handleAuth}
               >
-                <span className="fa fa-google me-2"></span> Sign in With Google
-              </button>
-              <form onSubmit={login}>
-                <div className="mb-3 text-start">
-                  <label htmlFor="exampleInputEmail1" className="form-label">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <div id="emailHelp" className="form-text">
-                    We'll never share your email with anyone else.
-                  </div>
+              <div className="flex items-center m-2 justify-center">
+                   <BsGoogle />
                 </div>
-                <div className="mb-3 text-start">
-                  <label htmlFor="exampleInputPassword1" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    required
-                    type="password"
-                    className="form-control"
-                    id="exampleInputPassword1"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <div className="mb-3 form-check text-start">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                    required
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1">
-                    I agree the terms and conditions
-                  </label>
-                </div>
-                <button type="submit" className="btn btn-dark w-100 mt-5 mb-3">
-                  Submit
-                </button>
-              </form>
-            </div>
+            <h2 className="text-center  text-xl font-bold text-gray-900">
+           Sign in With Google</h2>
+            </button>
+                    
+            <p className="mt-2 text-center text-sm text-gray-600">
+              Or{' '}
+              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                start your 14-day free trial
+              </a>
+            </p>
           </div>
-        </>
-      )}
-    </>
-  );
-}
+          <form onSubmit={login}
+                   className="mt-8 space-y-6" 
+                 method="POST" >
+            <input type="hidden" name="remember" defaultValue="true" />
+            <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="email-address" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Email address"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
 
-export default Login;
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                />
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                  Remember me
+                </label>
+              </div>
+
+              <div className="text-sm">
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Forgot your password?
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                  <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                </span>
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
+  )
+}

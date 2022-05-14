@@ -1,5 +1,4 @@
 import './index.css';
-import Example from "./components/Footer";
 import {
   BrowserRouter,
   Routes,
@@ -13,11 +12,13 @@ import  Login  from './Pages/Login';
 import ProductPage from './Pages/Product';
 import Products from './components/Products';
 import Cart from './Pages/Cart';
+import Example2 from './Pages/newLogin';
+import Nav from './components/Navbar';
 
 export default function App() {
   return (
     <BrowserRouter>
-     <Example />
+     <Nav />
     <Routes>
       <Route path="/" element={<Home />} />
     <Route path='/about' element={<About />} />
@@ -27,6 +28,9 @@ export default function App() {
     <Route path='/cart' element={<Cart  />} />
 
     <Route path='/login' element={<Login /> } />
+    <Route path='/register' element={<Example2 /> } />
+
+    
   
 
     </Routes>
