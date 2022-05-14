@@ -2,9 +2,14 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {RiUserAddFill} from 'react-icons/ri'
+
 import { BellIcon, ShoppingCartIcon,  LogoutIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import React from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import Login from "./Login";
+// import Signup from "./Signup";
+// import { signOut } from "../redux/action";
 
 const user = {
   name: 'Tom Cook',
@@ -28,7 +33,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Nav() {
   return (
     <>
   
@@ -78,6 +83,7 @@ export default function Example() {
                 </Link>
                 <Link to="/register" className="flex btn trans">
                 <RiUserAddFill  className="h-6 p-1 w-6" aria-hidden="true" />Register 
+                
                 </Link>
                     <Link to="/cart" className="flex btn trans ">
                   <ShoppingCartIcon  className="h-6 p-1 w-6" aria-hidden="true" />Cart 
