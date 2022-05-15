@@ -61,7 +61,7 @@ export default function Example2() {
               alt="Workflow"
             />
                <button
-                className="btn rounded-md flex w-96 justify-center items-center mx-auto"
+                className="btn mt-3 rounded-md flex w-96 justify-center items-center mx-auto"
                 data-bs-dismiss="modal"
                 onClick={handleAuth}
               >
