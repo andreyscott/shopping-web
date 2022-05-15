@@ -6,7 +6,7 @@ import {
 
 
 import { Home } from './Pages/Home';
-import { About } from './Pages/About';
+import About  from './Pages/About';
 import { Contact } from './Pages/Contact';
 import  Login  from './Pages/Login';
 import ProductPage from './Pages/Product';
