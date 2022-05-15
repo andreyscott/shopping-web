@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { XIcon } from '@heroicons/react/outline'
 import {BsGoogle} from 'react-icons/bs'
 
-function Signup() {
+function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +35,7 @@ function Signup() {
   };
 
   return (
-    <div className="bg-green-400  flex  justify-center items-center content-center">
+    <div className=" flex  justify-center items-center content-center">
       <div className="bg-white shadow-md rounded-xl px-8 pt-6 my-4 mb-4">
       {/* <!-- Modal --> */}
       {modal === true && (
@@ -140,4 +140,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Register;
