@@ -14,6 +14,7 @@ import Products from './components/Products';
 import Cart from './Pages/Cart';
 import Nav from './components/Navbar';
 import Register from './Pages/SignUp';
+import Checkout from "./Pages/Checkout";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
 
     <Route path='/login' element={<Login /> } />
     <Route path='/register' element={<Register /> } />
+    <Route path='checkout' element={<Checkout/> } />
 
     
   

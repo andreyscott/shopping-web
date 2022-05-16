@@ -1978,14 +1978,14 @@
 
 "@stripe/react-stripe-js@^1.8.0-0":
   version "1.8.0-0"
-  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.8.0-0.tgz#42a84b67609ce4c54bc0016f09d8120fc4eff76f"
+  resolved "https://registry.npmjs.org/@stripe/react-stripe-js/-/react-stripe-js-1.8.0-0.tgz"
   integrity sha512-9kg8aTRzq2VpSv2O6N3Uk5LtiAi3xAIkKP9EDj+Ll9h32fA3ei1Pi1iexNZREO9wdWFq4SKzEplgSikvPg98MA==
   dependencies:
     prop-types "^15.7.2"
 
 "@stripe/stripe-js@^1.29.0":
   version "1.29.0"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.29.0.tgz#f41e46aee711d1eabcb3bbc77376016a250ec962"
+  resolved "https://registry.npmjs.org/@stripe/stripe-js/-/stripe-js-1.29.0.tgz"
   integrity sha512-OsUxk0VLlum8E2d6onlEdKuQcvLMs7qTrOXCnl/BGV3fAm65qr6h3e1IZ5AX4lgUlPRrzRcddSOA5DvkKKYLvg==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
@@ -2103,7 +2103,7 @@
 
 "@tailwindcss/forms@^0.5.1":
   version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.1.tgz#7fe86b9b67e6d91cb902e2d3f4ebe561cc057a13"
+  resolved "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.1.tgz"
   integrity sha512-QSwsFORnC2BAP0lRzQkz1pw+EzIiiPdk4e27vGQjyXkwJPeC7iLIRVndJzf9CJVbcrrIcirb/TfxF3gRTyFEVA==
   dependencies:
     mini-svg-data-uri "^1.2.3"
@@ -2992,15 +2992,17 @@ axe-core@^4.3.5:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.4.1.tgz"
   integrity sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==
 
+axios@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.26.1.tgz"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/axobject-query/-/axobject-query-2.2.0.tgz"
   integrity sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
-
-axois@^0.0.1-security:
-  version "0.0.1-security"
-  resolved "https://registry.npmjs.org/axois/-/axois-0.0.1-security.tgz"
-  integrity sha512-8Nui4fwwyxHfjAfpDlg3Jt66EJA4i1D1eJch3D+wM/Oe+qhpyp7yfiszko/O5/adYu20wc37RG9/Eg8QIJHcvA==
 
 babel-jest@^27.4.2, babel-jest@^27.5.1:
   version "27.5.1"
@@ -3268,6 +3270,11 @@ builtin-modules@^3.1.0:
   resolved "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.2.0.tgz"
   integrity sha512-lGzLKcioL90C7wMczpkY0n/oART3MbBa8R9OFGE1rJxoVI86u4WAGfEk8Wjv10eKSyTHVGkSo3bvBylCEtk7LA==
 
+builtin-status-codes@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
+  integrity sha512-HpGFw18DgFWlncDfjTa2rcQ4W88O1mC8e8yZ2AvQY5KDaktSTwo+KRf6nHK6FRI5FyRyb/5T6+TSxfP7QyGsmQ==
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/bytes/-/bytes-3.0.0.tgz"
@@ -3427,7 +3434,7 @@ cliui@^7.0.2:
 
 clsx@^1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  resolved "https://registry.npmjs.org/clsx/-/clsx-1.1.1.tgz"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 co@^4.6.0:
@@ -4799,7 +4806,7 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.8:
   version "1.15.0"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.0.tgz"
   integrity sha512-aExlJShTV4qOUOL7yF1U5tvLCB0xQuudbf6toyYA0E/acBNw71mvjFTnLaRp50aQaYocMR0a/RMMBIHeZnGyjQ==
@@ -6491,7 +6498,7 @@ mini-css-extract-plugin@^2.4.5:
 
 mini-svg-data-uri@^1.2.3:
   version "1.4.4"
-  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  resolved "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
   integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
 
 minimalistic-assert@^1.0.0:
@@ -7839,7 +7846,7 @@ react-scripts@5.0.1:
 
 react-toastify@^9.0.1:
   version "9.0.1"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.1.tgz#2f3abd26a75efd55a82cb9c0a897c865218ea420"
+  resolved "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.1.tgz"
   integrity sha512-c2zeZHkCX+WXuItS/JRqQ/8CH8Qm/je+M0rt09xe9fnu5YPJigtNOdD8zX4fwLA093V2am3abkGfOowwpkrwOQ==
   dependencies:
     clsx "^1.1.1"
@@ -7864,7 +7871,7 @@ readable-stream@^2.0.1, readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^3.0.6:
+readable-stream@^3.0.6, readable-stream@^3.6.0:
   version "3.6.0"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.0.tgz"
   integrity sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==
@@ -8450,6 +8457,16 @@ statuses@2.0.1:
   version "1.5.0"
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+
+stream-http@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-3.2.0.tgz#1872dfcf24cb15752677e40e5c3f9cc1926028b5"
+  integrity sha512-Oq1bLqisTyK3TSCXpPbT4sdeYNdmyZJv1LxpEm2vu1ZhK89kSE5YXwZc3cWk0MagGaKriBh9mCFbVGtO+vY29A==
+  dependencies:
+    builtin-status-codes "^3.0.0"
+    inherits "^2.0.4"
+    readable-stream "^3.6.0"
+    xtend "^4.0.2"
 
 string-length@^4.0.1:
   version "4.0.2"
