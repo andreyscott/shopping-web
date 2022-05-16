@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {RiUserAddFill} from 'react-icons/ri'
@@ -6,10 +5,10 @@ import {RiUserAddFill} from 'react-icons/ri'
 import { BellIcon, ShoppingCartIcon,  LogoutIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { NavLink, Link } from 'react-router-dom'
 import React from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import Login from "./Login";
 // import Signup from "./Signup";
-// import { signOut } from "../redux/action";
+import { signOut } from "../redux/action";
 
 const user = {
   name: 'Tom Cook',
@@ -34,11 +33,15 @@ function classNames(...classes) {
 }
 
 export default function Nav() {
+  const state = useSelector((state) => state.handleCart);
+  const userState = useSelector((userState) => userState.handleUser);
+  const dispatch = useDispatch();
+  console.log(userState);
   return (
     <>
   
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-white">
+        <Disclosure as="nav" className="bg-gray-500">
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,16 +80,49 @@ export default function Nav() {
 
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                    <div className='w-auto mr-1  flex items-center justify-between'>
-                    <Link to="/login" className="flex btn trans">
+                    <div className='w-auto mr-1 bg-pink-600  flex items-center justify-between'>
+                    <div>
+                      {userState?.state?.displayName !== null
+                        ? userState?.state?.displayName
+                        : userState?.state?.email}
+                    </div>
+
+
+
+
+                    {/* <Link to="/login" className="flex btn trans">
+                  <LogoutIcon  className="h-6 px-1 w-6" aria-hidden="true" />Login 
+                </Link> */}
+                <div>
+  {userState && userState?.state == null ? (
+
+    <Link to="/login" className="flex btn trans">
                   <LogoutIcon  className="h-6 px-1 w-6" aria-hidden="true" />Login 
                 </Link>
+
+ 
+  ) : (
+    <button
+      onClick={() => dispatch(signOut())}
+      className="text-white bg-transparent hover:bg-red-500 hover:text-white font-normal py-2 px-4 border border-red-500 hover:border-transparent rounded"
+    >
+      <LogoutIcon className="w-5 h-5" /> LogOut
+    </button>
+
+  )
+    
+}
+
+</div>
                 <Link to="/register" className="flex btn trans">
                 <RiUserAddFill  className="h-6 p-1 w-6" aria-hidden="true" />Register 
                 
                 </Link>
+
                     <Link to="/cart" className="flex btn trans ">
-                  <ShoppingCartIcon  className="h-6 p-1 w-6" aria-hidden="true" />Cart 
+                  <ShoppingCartIcon  className="h-6 p-1 w-6" aria-hidden="true" />Cart(
+                    {state.length === 0? 0 : state.length}
+                  )
                   {/* {state.length === 0 ? 0 : state.length}) */}
                 </Link>    
                 </div>
@@ -97,7 +133,8 @@ export default function Nav() {
                         <div>
                           <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <img className="h-8 w-8 rounded-full" src={userState?.state?.photoURL  } alt="" />
+                            
                           </Menu.Button>
                         </div>
                         <Transition
@@ -182,11 +219,23 @@ export default function Nav() {
                   <div className="flex items-center px-5">
                  
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <img className="h-10 w-10 rounded-full" src={userState?.state?.photoURL } alt="" /> 
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                      <div className="text-base font-medium leading-none text-white">
+                      {userState?.state?.displayName !== null
+                        ? userState?.state?.displayName
+                        : userState?.state?.email}
+                    </div>
+                      <div className="text-sm font-medium leading-none text-gray-400">
+                      {userState?.state?.displayName !== null
+                        ?
+                         userState?.state?.email
+                        : userState?.state?.displayName
+                        
+                        }
+
+                      </div>
                     </div>
                     <button
                       type="button"
