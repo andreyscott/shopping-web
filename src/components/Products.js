@@ -162,7 +162,7 @@ function Products() {
     <div className="container my-5 py-5 ">
       <div className="row">
         <div className="col-12 mb-5">
-          <h1 className="text-3xl md:text-4xl border-b-2 pb-3  border-green-400  font-bold text-center text-green-500">
+          <h1 className="text-3xl md:text-4xl border-b-2 pb-3  border-sblue font-bold text-center text-sblue">
             Latest Products
           </h1>
           <hr />

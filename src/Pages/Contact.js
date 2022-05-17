@@ -8,7 +8,7 @@ export const Contact = () => {
   return (
     <div className="bg-gray-800 text-gray-100 px-8 py-12">
     <div className="text-center w-full">
-      <svg className="text-gray-100 h-8 mx-auto" fill={currentColor} viewBox="0 0 150 29" version="1.1"
+      {/* <svg className="text-gray-100 h-8 mx-auto" fill={currentColor} viewBox="0 0 150 29" version="1.1"
         xmlns="http://www.w3.org/2000/svg">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="Desktop-HD" transform="translate(-1112.000000, -438.000000)" fill={currentColor}>
@@ -28,7 +28,7 @@ export const Contact = () => {
             </g>
           </g>
         </g>
-      </svg>
+      </svg> */}
     </div>
     <div
       className="max-w-screen-xl mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
@@ -542,29 +542,42 @@ export const Contact = () => {
           </svg>
         </div>
       </div>
-      <div className="">
+      <form
+       action="mailto:andreyscott301@gmail.com"
+              method="post"
+              enctype="text/plain" className="">
         <div>
-          <span className="uppercase text-sm text-gray-600 font-bold">Full Name</span>
+          <label or="exampleFormControlTextarea1" className="uppercase text-sm text-gray-600 font-bold">Full Namer</label>
           <input className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" placeholder="" />
+            type="text" placeholder="John Doe"
+            required
+                  id="exampleForm"
+             />
         </div>
         <div className="mt-8">
-          <span className="uppercase text-sm text-gray-600 font-bold">Email</span>
+          <label or="exampleFormControlTextarea1" className="uppercase text-sm text-gray-600 font-bold">Email</label>
           <input className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text" />
+             reaquired
+                  type="email"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+              />
         </div>
         <div className="mt-8">
-          <span className="uppercase text-sm text-gray-600 font-bold">Message</span>
+          <label or="exampleFormControlTextarea1" className="uppercase text-sm text-gray-600 font-bold">Message</label>
           <textarea
-            className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+            className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline
+            "
+            rows={5}></textarea>
         </div>
-        <div classNameName="mt-8">
+        <div className="mt-8">
           <button
-            classNameName="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+          type='submit'
+            className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
             Send Message
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   )

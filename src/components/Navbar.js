@@ -17,10 +17,10 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'About', href: '/about', current: true },
-  { name: 'Products', href: 'product', current: false },
-  { name: 'Contact', href: 'contact', current: false },
+  { name: 'Home', href: '/', current: null },
+  { name: 'About', href: '/about', current: null },
+  { name: 'Products', href: 'product', current: null },
+  { name: 'Contact', href: 'contact', current: null },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -41,7 +41,7 @@ export default function Nav() {
     <>
   
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-500">
+        <Disclosure as="nav" className=" bg-white dark:bg-gray-500">
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export default function Nav() {
                             className={classNames(
                             item.current
                                 ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                : 'text-gray-600 hover:bg-gray-700 hover:text-white',
                               'px-3 py-2 rounded-md text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -80,19 +80,12 @@ export default function Nav() {
 
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                    <div className='w-auto mr-1 bg-pink-600  flex items-center justify-between'>
-                    <div>
+                    <div className='w-auto mr-1   flex items-center justify-between'>
+                    <div className='flex flex-wrap text-sm max-w-lg mx-2'>
                       {userState?.state?.displayName !== null
                         ? userState?.state?.displayName
                         : userState?.state?.email}
                     </div>
-
-
-
-
-                    {/* <Link to="/login" className="flex btn trans">
-                  <LogoutIcon  className="h-6 px-1 w-6" aria-hidden="true" />Login 
-                </Link> */}
                 <div>
   {userState && userState?.state == null ? (
 
@@ -104,9 +97,9 @@ export default function Nav() {
   ) : (
     <button
       onClick={() => dispatch(signOut())}
-      className="text-white bg-transparent hover:bg-red-500 hover:text-white font-normal py-2 px-4 border border-red-500 hover:border-transparent rounded"
+      className="text-black dark:text-white bg-transparent hover:bg-red-600 flex  hover:text-gray-400 font-normal py-2 px-4 border btn hover:border-transparent rounded"
     >
-      <LogoutIcon className="w-5 h-5" /> LogOut
+      <LogoutIcon className="w-5 h-5 mx-1 pt-1" /> LogOut
     </button>
 
   )
