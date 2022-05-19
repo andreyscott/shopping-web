@@ -215,7 +215,7 @@ export default function Nav() {
                       <img className="h-10 w-10 rounded-full" src={userState?.state?.photoURL } alt="" /> 
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">
+                      <div className="text-base font-medium leading-none text-gray-400">
                       {userState?.state?.displayName !== null
                         ? userState?.state?.displayName
                         : userState?.state?.email}
