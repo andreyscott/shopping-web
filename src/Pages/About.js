@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { NavBarr } from "../components/test";
 /* This example requires Tailwind CSS v2.0+ */
 export default function About() {
   return (
     <div className="relative bg-white overflow-hidden">
+    <NavBarr />
       <div className="pt-6 pb-80 sm:pt-16 sm:pb-28 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">

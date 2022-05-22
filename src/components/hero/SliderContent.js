@@ -14,7 +14,7 @@ function SliderContent({ activeIndex, sliderImage }) {
         >
           <img className="slide-image" src={slide.image} alt="" />
           <h2 className="slide-title">{slide.heading}</h2>
-          <h2 className="slide-text">{slide.text}</h2>
+          {/* <h3 className="slide-text">{slide.text}</h3> */}
         </div>
       ))}
     </section>

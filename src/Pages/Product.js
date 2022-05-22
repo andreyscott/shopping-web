@@ -3,6 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import { NavLink, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import { NavBarr } from "../components/test";
 
 function ProductPage() {
   const { id } = useParams();
@@ -47,7 +48,6 @@ function ProductPage() {
   const ShowProduct = () => {
     return (
       <div className="m-2 flex flex-col md:flex-row w-full h-full justify-between content-between ">
-      
         <div className="pb-2">
           <img
             src={product.image}
@@ -87,7 +87,10 @@ function ProductPage() {
   return (
     <div>
       <div className="container py-5 ">
+      <NavBarr />
+
         <div className="row py-5">
+        <NavBarr />
           {loading ? <Loading /> : <ShowProduct />}
           
            {/* <Loading /> */}
