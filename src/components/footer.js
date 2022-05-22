@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export const Footer = () => {
@@ -19,7 +19,7 @@ export const Footer = () => {
                 </Link>
             </li>
             <li className="my-2">
-                <a href='https://github.com/andreyscott/' className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" >
+                <a href='https://github.com/andreyscott/shopping-web' className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" >
                     Github
                 </a>
             </li>
