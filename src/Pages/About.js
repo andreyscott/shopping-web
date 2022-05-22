@@ -1,11 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { NavBarr } from "../components/test";
+import { Link} from "react-router-dom";
 /* This example requires Tailwind CSS v2.0+ */
 export default function About() {
   return (
     <div className="relative bg-white overflow-hidden">
-    <NavBarr />
       <div className="pt-6 pb-80 sm:pt-16 sm:pb-28 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
@@ -91,12 +89,12 @@ export default function About() {
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
               >
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>

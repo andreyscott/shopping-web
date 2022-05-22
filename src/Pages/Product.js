@@ -87,10 +87,8 @@ function ProductPage() {
   return (
     <div>
       <div className="container py-5 ">
-      <NavBarr />
 
         <div className="row py-5">
-        <NavBarr />
           {loading ? <Loading /> : <ShowProduct />}
           
            {/* <Loading /> */}
